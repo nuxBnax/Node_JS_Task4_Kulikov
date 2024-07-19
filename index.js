@@ -134,5 +134,5 @@ app.use((req, res) => {
 
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Сервер запущена на проту ${port}`);
+    console.log(`Сервер запущен на проту ${port}`);
 });
