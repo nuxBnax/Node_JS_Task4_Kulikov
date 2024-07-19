@@ -27,7 +27,7 @@ app.get('/users', (req, res) => {
 })
 
 /**
-* Получить коокретного пользователя
+* Получить конкретного пользователя
 */
 app.get('/users/:id', (req, res) => {
     const usersJson = fs.readFileSync(usersListPath, 'utf-8');
@@ -47,7 +47,7 @@ app.get('/users/:id', (req, res) => {
 })
 
 /**
-* Создание нового пользователя
+* Создать нового пользователя
 */
 app.post('/users', (req, res) => {
     const validateData = usersSchema.validate(req.body);
@@ -72,7 +72,7 @@ app.post('/users', (req, res) => {
 
 
 /**
-* Обновление статьи
+* Обновление данных пользователя
 */
 app.put('/users/:id', (req, res) => {
     const validateData = usersSchema.validate(req.body);
@@ -104,7 +104,7 @@ app.put('/users/:id', (req, res) => {
 
 
 /**
-* Удаление статьи
+* Удаление пользователя
 */
 app.delete('/users/:id', (req, res) => {
     const usersJson = fs.readFileSync(usersListPath, 'utf-8');
@@ -131,6 +131,7 @@ app.use((req, res) => {
         message: 'URL not found'
     })
 })
+
 const port = 3000;
 app.listen(port, () => {
     console.log(`Сервер запущена на проту ${port}`);
